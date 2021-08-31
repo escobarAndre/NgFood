@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
+Projeto criado para o curso de Desenvolvedor Front-End do IGTI (Instituto de Gestão e Tecnologia da Informação)
+
+O intuito era criar um básico app de pedidos para uma lanchonete fictícia.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
