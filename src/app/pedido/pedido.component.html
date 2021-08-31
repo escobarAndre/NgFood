@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Pedido</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="pedido">
+    <div class="pedido-list">
+        <div class="pedido-list__item">
+            <div  *ngIf="produtosService.produtos.length != 0; else elseBlock">
+                <div class="exibir" *ngFor="let produtos of produtosService.produtos">
+                    <p>{{produtos.nome}}</p>
+                    <p>{{produtos.quantidade}} x {{produtos.preco}}</p>
+                </div>
+            </div>
+            <ng-template #elseBlock>Seu pedido está vazio.</ng-template>   
+        </div>
+       
+        <div class="total">
+            <p>Total</p>
+            <p>{{produtosService.valorTotal() | currency : 'BRL'}}</p>
+        </div>
+
+    </div>
+    <div class="example-button-row">
+        <button (click)="goToPedido('Cardapio')" mat-raised-button>Incluir mais itens</button>
+        <button (click)="produtosService.limpar()" mat-raised-button>Limpar</button>
+        <button mat-raised-button color="accent">Concluir</button>
+    </div>
+</div>

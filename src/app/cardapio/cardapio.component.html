@@ -1,0 +1,81 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Card</span>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <mat-icon  class="link" (click)="goToPedido('Pedido')" matBadge="{{produtosService.quantidadeTotal()}}" matBadgeColor="warn" aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
+    <span class="example-spacer"></span>
+    <span class="link"  (click)="goToPedido('Pedido')">VER PEDIDO</span>
+    <span class="example-spacer"></span>
+    <span class="link" (click)="goToPedido('Pedido')" >{{produtosService.valorTotal() | currency: 'BRL'}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="cardapio">
+  <h4 class="categoria">Sanduiches de Boi</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | filter' (click)="produtosService.add(produto.descricao, produto.preco)">
+      <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+      <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Sanduiches de Frango</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | frango' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Sanduiches Diversos</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | diversos' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Sanduiches Especiais</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | especiais' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Pizza</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | pizzas' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Macarrão na Chapa</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | macarrao' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Pastelão</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | pastelao' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Porções</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | porcao' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Creme de Açai</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | acai' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Sucos</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | sucos' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+  
+  <h4 class="categoria">Bebidas diversas</h4>
+  <div class="produtos"  *ngFor='let produto of produtos | bebidas' (click)="produtosService.add(produto.descricao, produto.preco)">
+    <p style="margin-right: 2rem;">{{produto.descricao}}</p>
+    <p>{{produto.preco | currency : 'BRL'}}</p> 
+  </div>
+</div>
